@@ -1,0 +1,24 @@
+//This program asks the user for a number and then prints a table 
+// of squars from one up to that number.
+//Created by Thomas Clifford on 2/17/2014
+
+#include <stdio.h>
+
+int main()
+{
+	int i = 0;
+	int num = 0;
+	printf("Enter number: ");
+	scanf("%d" , &num);
+	printf("This program outputs a table of squares\n");
+
+	for (i = 0; i <= num; i++)
+	{
+		printf("%3d %6\n", i, i*i);
+		
+	}
+
+	getchar();	//keep window open
+	getchar();
+	return 0;
+}
