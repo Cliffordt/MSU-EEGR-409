@@ -1,1 +1,77 @@
-//test
+// Assignment 1.c
+// ThomasC.HW1.409
+// Created by Thomas Clifford on 2/9/14
+// Calculate a traveled distance using a radius.
+
+#include <stdio.h>
+#include <math.h>
+
+void main()
+
+{
+
+	float rad=0; //Wheel Radius
+	float cir=0; //Circumference
+	float Rev1=0; //Number of revelutions for run 1
+	float Rev2=0; //Number of revelutions for run 2
+	float Rev3=0; //Number of revelutions for run 3
+	float tdt=0; //True distance traveled
+	float atdt=0;
+	float k=0; //Average true distance traveled
+	float ee=0; //Encoder error
+	float pee=0;
+	float Df=0; //Percent encoder error
+	float dis1=0;
+	float dis2=0;
+	float dis3=0; //Distance traveled
+
+		// Asks the user to enter the radius of the wheel and the number of revolutions made
+		// for each run
+		printf("Enter the radius of the wheel (cm): ");
+		scanf("%f", &rad);
+		printf("\n");
+		printf("Enter the number of revolutions for run 1: ");
+		scanf("%f", &Rev1);
+		printf("\n");
+		printf("Enter the number of revolutions for run 2: ");
+		scanf("%f", &Rev2);
+		printf("\n");
+		printf("Enter the number of revolutions for run 3: ");
+		scanf("%f", &Rev3);
+		printf("\n");
+
+		// Ask the user to enter the true distance traveled
+		printf("Enter the true distance traveled: ");
+		scanf("%f", &tdt);
+
+		// Calculate the distance traveled for each run
+		dis1 = Rev1*2*3.14*rad;
+		dis2 = Rev2*2*3.14*rad;
+		dis3 = Rev3*2*3.14*rad;
+
+		// Display the distances covered for each run to 2 decimal places
+		printf("\n");
+		printf("RUN\t DISTANCE (cm)\n");
+		printf("---\t -------------\n");
+		printf("1 %20.2f\n", dis1);
+		printf("2 %20.2f\n", dis2);
+		printf("3 %20.2f\n", dis3);
+
+		// Display the average distance traveled
+		atdt = dis1 + dis2 + dis3;
+		k = atdt/3;
+		printf("\nAverage Distance Traveled:%10.2f",k);
+
+		// Display the encoder error (absolute value of the difference between the measured
+		// average distance traveled and the true distance traveled)
+		ee = k - tdt;
+		printf("\nEncoder Error:%19.2f", ee);
+
+		// Display the percent encoder error (encoder error/true distance traveled)
+		pee = (ee/tdt)*100;
+		printf("\nPercent Encoder Error:%10.1f%%",pee);
+		printf("\n");
+
+	getchar();
+	getchar();
+}
