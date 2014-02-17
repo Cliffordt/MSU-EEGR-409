@@ -1,0 +1,27 @@
+//This program asks the user for an integer number and
+//calculate the number of digits by counting how many times the number
+//is divisible by 10
+
+#include <stdio.h>
+
+void main()
+
+{
+	int num = 0;
+	int numDigits =0;
+
+	printf("Enter a decimal number: ");
+	scanf("%i", &num);
+
+	do
+	{
+		numDigits++;
+		num /= 10;
+	} while (num > 0);
+
+	printf("The number of digits is %i: \n", numDigits);
+
+	getchar();
+	getchar();
+
+}
